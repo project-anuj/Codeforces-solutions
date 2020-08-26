@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	string s,res="";
+	cin>>s;
+	int space=0;
+	for(int i=0;i<s.length();i++)
+	{
+		if(i+2<s.length()&&s[i]=='W'&&s[i+1]=='U'&&s[i+2]=='B')
+		{
+			i+=2;
+			if(space==0)
+			{
+				res+=" ";
+				space=1;
+			}
+		}
+		else
+		{
+			space=0;
+			res+=string(1,s[i]);
+		}
+	}
+	
+	if(res[0]==' ')
+	res.erase(res.begin());
+	cout<<res<<endl;
+}
