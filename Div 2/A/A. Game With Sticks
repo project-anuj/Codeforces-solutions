@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int m,n;
+	cin>>m>>n;
+	vector<pair<int,int>> v;
+	for(int i=1;i<=m;i++)
+	{
+		for(int j=1;j<=n;j++)
+		{
+			v.push_back({i,j});
+		}
+	}
+	int flag=0;
+	while(v.size()>0)
+	{
+		if(flag==0)
+		{
+			flag=1;
+			int x=v[0].first;
+			int y=v[0].second;
+			for(int i=0;i<v.size();i++)
+			{
+				if(v[i].first==x||v[i].second==y)
+				{
+					v.erase(v.begin()+i);
+				i--;
+				}
+			}
+		}
+		else
+		{
+			flag=0;
+			int x=v[0].first;
+			int y=v[0].second;
+			for(int i=0;i<v.size();i++)
+			{
+				if(v[i].first==x||v[i].second==y)
+				{
+					v.erase(v.begin()+i);
+				i--;
+				}
+			}
+		}
+	}
+	if(flag==1)
+	cout<<"Akshat"<<endl;
+	else
+	cout<<"Malvika"<<endl;
+}
