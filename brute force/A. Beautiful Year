@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll; 
+
+int main()
+{
+	int y;
+	cin>>y;
+	set<int> st;
+	int x=y;
+	while(1)
+	{	x++;
+		int x1=x;
+		st.insert(x1%10);
+		x1/=10;
+		st.insert(x1%10);
+		x1/=10;
+		st.insert(x1%10);
+		x1/=10;
+		st.insert(x1%10);
+		if(st.size()>=4)
+		break;
+		st.clear();
+	}
+	cout<<x<<endl;
+}
